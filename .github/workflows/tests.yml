@@ -52,9 +52,7 @@ jobs:
       - name: Run headed tests
         uses: coactions/setup-xvfb@v1.0.1
         with:
-          run: |
-            npx playwright test --headed --workers=1 --retries=2 --project=chromium --shard=${{ matrix.shard }}/${{ strategy.job-total }}
-            npx playwright test --headed --workers=1 --retries=2 --project=firefox --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+          run: npx playwright test --headed --workers=2 --retries=2 --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       # - name: Upload results to datadog
       #   if: always()
