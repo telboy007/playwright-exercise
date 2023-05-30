@@ -31,11 +31,9 @@ jobs:
           touch .env
           echo BASE_URL='${{ secrets.BASE_URL }}' >> .env
           
-      - name: Store Playwright's Version
-        run: |
-          PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
-          echo "Playwright's Version: $PLAYWRIGHT_VERSION"
-          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('playwright/package.json').version)")" >> $GITHUB_ENV
 
       - name: Cache playwright binaries
         uses: actions/cache@v3
