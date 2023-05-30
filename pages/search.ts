@@ -28,8 +28,9 @@ export class GoogleSearchPage {
   }
 
   async clickSearchButton() {
+    if(await this.searchButton.isHidden()) {
     await this.page.keyboard.press('Escape');
-    await this.searchButton.isVisible();
+    };
     await this.searchButton.click();
     await this.page.waitForLoadState();
   }
