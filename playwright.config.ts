@@ -11,8 +11,9 @@ const resultsDir = path.resolve('./', 'output');
 
 const config: PlaywrightTestConfig = {
   // Options shared for all projects.
-  timeout: 30000,
-  workers: 1,
+  timeout: 60000,
+  workers: 2,
+  fullyParallel: true,
   reportSlowTests: null,
   reporter: [
     ['github'],

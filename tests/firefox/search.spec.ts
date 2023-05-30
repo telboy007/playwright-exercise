@@ -32,8 +32,6 @@ test.afterEach(async ({ page }, testInfo: TestInfo) => {
         video.delete();
       }
     }
-    await page.close();
-    video.delete();
   }
 });
 
