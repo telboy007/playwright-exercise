@@ -39,9 +39,7 @@ jobs:
         uses: actions/cache@v3
         id: playwright-cache
         with:
-          path: | # need to pick one
-            ~/.cache/ms-playwright # ubuntu runners
-            ~/Library/Caches/ms-playwright # MacOS runners
+          path: ~/.cache/ms-playwright # ubuntu runners
           key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
       - run: npm ci
       - if: steps.playwright-cache.outputs.cache-hit != 'true'
