@@ -44,6 +44,6 @@ test('search', async ({ page }) => {
 
   await googleSearchPage.clearDisclaimer();
   await googleSearchPage.enterSearchText(testData);
-  await googleSearchPage.clickSearchButton();
+  await googleSearchPage.hitEnterAndWaitForLoad();
   await googleSearchPage.checkSearchResults(testData);
 });

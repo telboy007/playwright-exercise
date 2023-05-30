@@ -25,12 +25,11 @@ export class GoogleSearchPage {
 
   async enterSearchText(string: string) {
     await this.searchTextField.type(string);
+    await this.page.keyboard.press('Escape');
   }
 
-  async clickSearchButton() {
-    if(await this.searchButton.isHidden()) {
-    await this.page.keyboard.press('Escape');
-    };
+  async hitEnterAndWaitForLoad() {
+    await this.searchButton.waitFor();
     await this.searchButton.click();
     await this.page.waitForLoadState();
   }
