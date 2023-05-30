@@ -8,4 +8,4 @@ Some features:
 * Organises video, screenshots and trace files into folders based on test info rather than uuid filenames
 * JUnit results can be uploaded to a 3rd party service to monitor trends.
 
-+ Sharding is over the top for a single test across two browsers but is shown for illustrative purposes only.
++Sharding is over the top for a single test across two browsers but is shown for illustrative purposes only.
