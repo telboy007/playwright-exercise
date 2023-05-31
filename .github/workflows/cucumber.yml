@@ -47,8 +47,10 @@ jobs:
       - if: steps.playwright-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps
         
-      - name: Run tests
-        run: npm run test:bdd
+      - name: Run headed tests
+        uses: coactions/setup-xvfb@v1.0.1
+        with:
+          run: npm run test:bdd
 
       # - name: Upload results to datadog
       #   if: always()
