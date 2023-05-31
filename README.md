@@ -32,3 +32,7 @@ Under github actions the two playwright approachs can be found and run:
 * Run playwright tests
 
 NOTE: after running the cucumber tests there will be a link to a report on cucumber.io in the console log.
+
+### To do list
+
+* Need to add saving assets after a test failure into the cucumber test.setup.ts file.
