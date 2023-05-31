@@ -17,7 +17,7 @@ Given("I enter search text {string}", async function (this: OurWorld, text: stri
 });
 
 When("I click search button", async function (this: OurWorld) {
-  await this.page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b').waitFor();
+  await this.page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b').waitFor({ timeout: 15000});
   await this.page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b').click();
   await this.page.waitForLoadState();
 });
