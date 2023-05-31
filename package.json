@@ -2,10 +2,39 @@
   "dependencies": {
     "@playwright/test": "^1.34.3",
     "dotenv": "^16.0.3",
-    "playwright": "^1.34.3"
+    "playwright": "^1.34.3",
+    "typescript-eslint": "^0.0.1-alpha.0"
   },
   "scripts": {
-    "test:chromium": "npx playwright test --project=chromium --headed",
-    "test:firefox": "npx playwright test --project=firefox --headed"
-  }
+    "test": "npx playwright test --headed",
+    "pre-commit": "npx eslint .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "^8.41.0",
+    "husky": "^8.0.3",
+    "typescript": "^5.0.4"
+  },
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "Simple playwright exercise",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telboy007/playwright-exercise.git"
+  },
+  "keywords": [
+    "playwright"
+  ],
+  "author": "Terry Bonds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/telboy007/playwright-exercise/issues"
+  },
+  "homepage": "https://github.com/telboy007/playwright-exercise#readme"
 }

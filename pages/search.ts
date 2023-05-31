@@ -18,7 +18,7 @@ export class GoogleSearchPage {
   }
 
   async clearDisclaimer() {
-    if(await this.acceptAllButton.isVisible( {timeout: 15000})) {
+    if(await this.acceptAllButton.isVisible({ timeout: 15000 })) {
       await this.acceptAllButton.click();
     }
   }
@@ -28,7 +28,7 @@ export class GoogleSearchPage {
     await this.page.keyboard.press('Escape');
   }
 
-  async hitEnterAndWaitForLoad() {
+  async clickSearchButton() {
     await this.searchButton.waitFor();
     await this.searchButton.click();
     await this.page.waitForLoadState();

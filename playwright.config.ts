@@ -4,9 +4,9 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 
 // Use dotenv at entry point
-require('dotenv').config();
+import 'dotenv/config'
 
-const path = require('path');
+import path = require('path');
 const resultsDir = path.resolve('./', 'output');
 
 const config: PlaywrightTestConfig = {

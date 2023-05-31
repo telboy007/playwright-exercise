@@ -2,9 +2,7 @@ import { test, TestInfo } from '@playwright/test';
 import { GoogleSearchPage } from '../../pages/search';
 
 // Use dotenv at entry point
-require('dotenv').config();
-
-const path = require('path'); 
+import 'dotenv/config'
 
 test.beforeEach(async ({ page }, testInfo: TestInfo) => {
   // navigate to base url
@@ -38,12 +36,27 @@ test.afterEach(async ({ page }, testInfo: TestInfo) => {
   }
 });
 
-test('search', async ({ page }) => {
-  const testData = 'Playwright'
-  let googleSearchPage = new GoogleSearchPage(page);
+test.describe('Google Search', () => {
 
-  await googleSearchPage.clearDisclaimer();
-  await googleSearchPage.enterSearchText(testData);
-  await googleSearchPage.hitEnterAndWaitForLoad();
-  await googleSearchPage.checkSearchResults(testData);
+  test('search', async ({ page }) => {
+    const testData = 'Playwright'
+    const googleSearchPage = new GoogleSearchPage(page);
+
+    await test.step('Clear disclaimer', async () => {
+      await googleSearchPage.clearDisclaimer();
+    });
+
+    await test.step('Enter search text', async () => {
+      await googleSearchPage.enterSearchText(testData);
+    });
+
+    await test.step('Enter search text', async () => {
+      await googleSearchPage.clickSearchButton();
+    });
+
+    await test.step('Check search results', async () => {
+      await googleSearchPage.checkSearchResults(testData);
+    });
+  });
+
 });
