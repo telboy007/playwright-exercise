@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "npx playwright test --headed",
-    "test:bdd": "cucumber-js features/**/*.feature --require-module ts-node/register --require test.setup.ts --require step-definitions/**/*.ts",
+    "test:bdd": "cucumber-js features/**/*.feature --require-module ts-node/register --require test.setup.ts --require step-definitions/**/*.ts --publish",
     "pre-commit": "npx eslint .",
     "prepare": "husky install"
   },

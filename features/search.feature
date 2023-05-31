@@ -2,7 +2,7 @@ Feature: Google Search
   A simple google search test using BDD
 
 Background:
-  Given I clear the disclaimer
+  Given I navigate to google and clear the disclaimer if present
 
 Scenario: Check search text is found in first search result
   Given I enter search text 'Playwright'

@@ -1,5 +1,7 @@
 # playwright-exercise
 
+### Overview
+
 Two examples of using playwright to test that a search string is found in the first google search result.
 
 * Using BDD, cucumber and playwright:
@@ -21,3 +23,12 @@ Some features of the playwright framework example in this repo:
 * JUnit results can be uploaded to a 3rd party service to monitor trends.
 
 +Sharding is over the top for a single test across two browsers but is shown for illustrative purposes only.
+
+### GitHub actions
+
+Under github actions the two playwright approachs can be found and run:
+
+* Run cucumber tests
+* Run playwright tests
+
+NOTE: after running the cucumber tests there will be a link to a report on cucumber.io in the console log.

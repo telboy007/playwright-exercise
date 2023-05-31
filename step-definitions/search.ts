@@ -4,7 +4,7 @@ import { OurWorld } from "../types";
 import { expect } from '@playwright/test';
 import 'dotenv/config';
 
-Given("I clear the disclaimer", async function (this: OurWorld) {
+Given("I navigate to google and clear the disclaimer if present", async function (this: OurWorld) {
   await this.page.goto(`${process.env.BASE_URL}`);
   if(await this.page.getByRole('button', { name: 'Accept all' }).isVisible({ timeout: 15000 })) {
     await this.page.getByRole('button', { name: 'Accept all' }).click();
