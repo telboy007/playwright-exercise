@@ -6,9 +6,6 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 // Use dotenv at entry point
 import 'dotenv/config'
 
-import path = require('path');
-const resultsDir = path.resolve('./', 'output');
-
 const config: PlaywrightTestConfig = {
   // Options shared for all projects.
   timeout: 60000,
@@ -17,7 +14,7 @@ const config: PlaywrightTestConfig = {
   reportSlowTests: null,
   reporter: [
     ['github'],
-    ['junit', { outputFile: `${resultsDir}/junit/results.xml` }],
+    ['junit', { outputFile: './output/junit/results.xml' }],
   ],
   use: {
     trace: 'retain-on-failure',
