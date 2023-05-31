@@ -18,7 +18,7 @@ Two examples of using playwright to test that a search string is found in the fi
 
 Some features of the playwright framework example in this repo:
 * Powered by github actions and utilises parallelisation+
-* Exmaple of how project config can be matched to certain test folders
+* Example of how project config can be matched to certain test folders
 * Organises video, screenshots and trace files into folders based on test info rather than uuid filenames
 * JUnit results can be uploaded to a 3rd party service to monitor trends.
 
