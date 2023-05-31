@@ -48,7 +48,7 @@ jobs:
         run: npx playwright install-deps
         
       - name: Run tests
-        run: cucumber-js features/**/*.feature --require-module ts-node/register --require test.setup.ts --require step-definitions/**/*.ts --publish
+        run: npm run test:bdd
 
       # - name: Upload results to datadog
       #   if: always()
