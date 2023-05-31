@@ -47,10 +47,8 @@ jobs:
       - if: steps.playwright-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps
         
-      - name: Run headed tests
-        uses: coactions/setup-xvfb@v1.0.1
-        with:
-          run: cucumber-js features/**/*.feature --require-module ts-node/register --require test.setup.ts --require step-definitions/**/*.ts --publish
+      - name: Run tests
+        run: cucumber-js features/**/*.feature --require-module ts-node/register --require test.setup.ts --require step-definitions/**/*.ts --publish
 
       # - name: Upload results to datadog
       #   if: always()
