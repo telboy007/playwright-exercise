@@ -17,12 +17,12 @@ Given("I enter search text {string}", async function (this: OurWorld, text: stri
 });
 
 When("I click search button", async function (this: OurWorld) {
-  await this.page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b').waitFor({ timeout: 15000});
-  await this.page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b').click();
+  await this.page.getByRole('button', { name: 'Google Search' }).first().waitFor({ timeout: 15000});
+  await this.page.getByRole('button', { name: 'Google Search' }).first().click();
   await this.page.waitForLoadState();
 });
 
 Then("I see {string} in the first search result", async function (this: OurWorld, text: string) {
-  const searchResult = await this.page.locator('#rso > div:nth-child(1) > div > div > div > div > div > div > div > div.yuRUbf > a > h3').innerText();
+  const searchResult = await this.page.locator('#rso > div.hlcw0c > div > div > div > div > div > div > div > div.yuRUbf > div > span > a > h3').innerText();
   expect(searchResult).toContain(text);
 });
