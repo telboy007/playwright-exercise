@@ -14,7 +14,7 @@ export class GoogleSearchPage {
     this.acceptAllButton = page.getByRole('button', { name: 'Accept all' });
     this.searchTextField = page.locator('#APjFqb');
     this.searchButton = page.locator('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b');
-    this.resultString = page.locator('#rso > div:nth-child(1) > div > div > div > div > div > div > div > div.yuRUbf > a > h3');
+    this.resultString = page.locator('#rso > div.hlcw0c > div > div > div > div > div > div > div > div.yuRUbf > div > span > a > h3');
   }
 
   async clearDisclaimer() {

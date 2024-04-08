@@ -5,6 +5,6 @@ Background:
   Given I navigate to google and clear the disclaimer if present
 
 Scenario: Check search text is found in first search result
-  Given I enter search text 'Playwright'
+  And I enter search text 'Playwright'
   When I click search button
   Then I see 'Playwright' in the first search result
