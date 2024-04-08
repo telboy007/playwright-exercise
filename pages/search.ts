@@ -13,7 +13,7 @@ export class GoogleSearchPage {
     this.page = page;
     this.acceptAllButton = page.getByRole('button', { name: 'Accept all' });
     this.searchTextField = page.locator('#APjFqb');
-    this.searchButton = page.getByRole('button', { name: 'Google Search' });
+    this.searchButton = page.getByRole('button', { name: 'Google Search' }).first();
     this.resultString = page.locator('#rso > div.hlcw0c > div > div > div > div > div > div > div > div.yuRUbf > div > span > a > h3');
   }
 
