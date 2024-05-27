@@ -36,7 +36,7 @@ jobs:
         run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').packages['node_modules/@playwright/test'].version)")" >> $GITHUB_ENV
 
       - name: Cache playwright binaries
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright # ubuntu runners
@@ -48,7 +48,7 @@ jobs:
         run: npx playwright install-deps
         
       - name: Run headed tests
-        uses: coactions/setup-xvfb@v1.0.1
+        uses: coactions/setup-xvfb@6b00cf1889f4e1d5a48635647013c0508128ee1a
         with:
           run: npm run test:bdd
 
