@@ -1,3 +1,5 @@
+NOTE: Google is flagging the tests as suspicious network activity.
+
 # playwright-exercise
 
 ### Overview
